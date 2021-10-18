@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block header %}
+   <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{ url_for('static', filename='assets/img/post.jpg') }})">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="page-heading">
+                            <h1>Self-Love Books Recommendations</h1>
+                            <span class="subheading">Not sure what to read? We have many.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+{% block content %}
+ <!-- Main Content-->
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <b>Book</b>
+     </div>
+     <div class="col">
+         <b>Author</b>
+     </div>
+     <div class="col">
+         <b>Review</b>        
+      </div>
+     <div class="col">
+         <b>Price</b>
+     </div>     
+  </div>
+ {% for row in  entries  %}
+ <div class="row">
+     <div class="col">
+              {{ row["Book"] }}
+     </div>
+     <div class="col">
+              {{ row["Author"] }}
+     </div>
+     <div class="col">
+              {{ row["Review"] }}
+     </div>
+     <div class="col">
+              {{ row["Price"] }}
+     </div>     
+ </div><!-- end row -->
+ {% endfor %}
+</div><!-- end container -->
+<hr />
+</div>
+{% endblock %}
